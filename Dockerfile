@@ -1,5 +1,7 @@
-FROM nginx
+FROM alpine
 
-COPY index.html /usr/share/nginx/html/index.html
+RUN apk update && apk add nginx && mkdir /etc/nginx/html
+
+COPY index.html /etc/nginx/html/index.html
 
 EXPOSE 80
