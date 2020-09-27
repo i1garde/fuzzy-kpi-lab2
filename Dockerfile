@@ -6,4 +6,4 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY index.html /usr/share/nginx/html/
 
-RUN service nginx start
+RUN /etc/init.d/nginx start
