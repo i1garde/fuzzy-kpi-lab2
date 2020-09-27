@@ -2,6 +2,8 @@ FROM alpine
 
 RUN apk update && apk add nginx
 
-#COPY index.html /etc/nginx/html/index.html
+COPY nginx.conf /etc/nginx/nginx.conf
 
-#EXPOSE 80
+COPY index.html /usr/share/nginx/html/
+
+RUN service nginx start
