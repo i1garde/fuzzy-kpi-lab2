@@ -8,4 +8,4 @@ COPY index.html /usr/share/nginx/html/
 
 EXPOSE 8008
 
-CMD ["rc-service nginx start"]
+CMD ["nginx", "-g", "daemon off;"]
