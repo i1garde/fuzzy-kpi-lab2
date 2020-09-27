@@ -1,11 +1,9 @@
 FROM alpine
 
-RUN apk update && apk add nginx
+RUN apk update && apk add nginx && mkdir -p /run/nginx
 
-RUN mkdir -p /run/nginx
+COPY nginx.conf /etc/nginx/nginx.conf && index.html /usr/share/nginx/html/
 
-COPY nginx.conf /etc/nginx/nginx.conf
+EXPOSE 80
 
-COPY index.html /usr/share/nginx/html/
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD [nginx]
