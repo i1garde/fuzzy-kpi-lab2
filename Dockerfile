@@ -1,6 +1,6 @@
-FROM nginx:1.19.2-alpine
+FROM alpine
 
-#RUN apk update && apk add nginx && mkdir -p /run/nginx
+RUN apk update && apk add nginx && mkdir -p /run/nginx
 
 #COPY nginx.conf /etc/nginx/nginx.conf
 
